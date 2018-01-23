@@ -8,27 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
     
-    var cellContent = ["James","Stella","Ken","Kelly"]
+    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var slider: UISlider!
+    @IBAction func slideChange(_ sender: UISlider) {
+        print(sender.value)
+        table.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellContent.count
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
+        cell.textLabel?.text = String(Int(slider.value * 20 ) * (indexPath.row + 1))
         
-        cell.textLabel?.text = cellContent[indexPath.row]
-        
-        return cell
+        return cell;
     }
     
+    
+   
 
-    var data = 0
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

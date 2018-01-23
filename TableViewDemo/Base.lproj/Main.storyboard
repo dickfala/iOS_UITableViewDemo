@@ -18,34 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e9N-al-1RQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.050000000000000003" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="skH-6n-O2S">
+                                <rect key="frame" x="14" y="27" width="347" height="31"/>
+                                <connections>
+                                    <action selector="slideChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mgz-st-Bn3"/>
+                                </connections>
+                            </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IsL-vb-7Ag">
+                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="ToU-xI-Rue">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="eUk-dS-3O1">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ToU-xI-Rue" id="W68-01-Yeh">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eUk-dS-3O1" id="rdt-3H-7J1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eVa-f9-wtb"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VSa-Uh-aqc"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qEI-to-8XE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WcP-jg-6SR"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.54920337303528699" green="1" blue="0.76766497514015719" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="e9N-al-1RQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AEw-7m-8I7"/>
-                            <constraint firstItem="e9N-al-1RQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZFH-KE-vFP"/>
-                            <constraint firstItem="e9N-al-1RQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lVE-Cg-YPt"/>
-                            <constraint firstItem="e9N-al-1RQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wSZ-JI-TiC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="skH-6n-O2S" secondAttribute="trailing" constant="16" id="7UJ-2W-pck"/>
+                            <constraint firstItem="IsL-vb-7Ag" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8ti-cy-Ojn"/>
+                            <constraint firstItem="skH-6n-O2S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="Af6-co-Tiw"/>
+                            <constraint firstItem="IsL-vb-7Ag" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="I8R-ll-Rdx"/>
+                            <constraint firstItem="skH-6n-O2S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LNN-e3-gML"/>
+                            <constraint firstItem="IsL-vb-7Ag" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cqj-St-QsD"/>
+                            <constraint firstItem="IsL-vb-7Ag" firstAttribute="top" secondItem="skH-6n-O2S" secondAttribute="bottom" constant="35" id="d17-Un-MAr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="skH-6n-O2S" id="X2q-Ov-SPp"/>
+                        <outlet property="table" destination="IsL-vb-7Ag" id="k6f-aR-AAk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
